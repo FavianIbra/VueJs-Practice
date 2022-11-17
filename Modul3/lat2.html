@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Lanjut</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <book-detail title="Buku tata cara bernafas" author="Sigit Rendang" year="2022"></book-detail>
+        <book-detail></book-detail>
+    </div>
+
+    <template id="bookDetail">
+        <div>
+            <h2>Book Detail</h2>
+            <h3>{{ title }}</h3>
+            <p>Author :{{ author }}</p>
+            <p>Year :{{ year }}</p>
+        </div>
+    </template>
+    <script>
+
+        Vue.component('book-detail', {
+            template: "#bookDetail",
+            props: ['title','author','year']
+        })
+        var app = new Vue ({
+            el: "#app"
+        })
+    </script>
+</body>
+</html>
